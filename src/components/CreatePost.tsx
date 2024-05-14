@@ -40,7 +40,7 @@ export function PostForm() {
   return (
     <>
       {!showForm && (
-        <div className="flex justify-end my-4">
+        <div className="flex justify-end mb-4">
           <Button onClick={() => setShowForm(!showForm)}>
             <IoMdAdd className="h-6 w-6" />
             <span className="ml-2">Create Post</span>

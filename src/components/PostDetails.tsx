@@ -10,7 +10,7 @@ import { Post } from "@/types";
 
 export function PostCard({ post }: { post: Post }) {
   return (
-    <Card className="w-full mt-8">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>{post.title}</CardTitle>
         <CardDescription>johndoe@example.com</CardDescription>

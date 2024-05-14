@@ -34,7 +34,6 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-2xl my-4 font-bold">Home</h1>
       <PostForm />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((post: PostWithUser) => (

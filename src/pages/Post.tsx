@@ -27,7 +27,7 @@ export default function Page() {
   };
 
   return (
-    <div className="px-8">
+    <div>
       <PostCard post={data.post} />
       <CommentForm postId={data.post.id} />
       <h1 className="text-2xl font-bold my-8">Comments</h1>
