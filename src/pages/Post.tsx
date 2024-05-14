@@ -2,6 +2,9 @@ import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 
 import { Post, User, Comment } from "@/types";
 import { fetchPost, fetchUsers, fetchComments } from "@/api";
+import { PostCard } from "@/components/PostDetails";
+import { CommentForm } from "@/components/CommentForm";
+import { CommentCard } from "@/components/CommentCard";
 
 export const postLoader = async ({ params }: LoaderFunctionArgs) => {
   const postId = Number(params.id);
@@ -23,11 +26,14 @@ export default function Page() {
     comments: Comment[];
   };
 
-  console.log(data);
-
   return (
-    <div>
-      <h1 className="text-2xl my-4 font-bold">Post</h1>
+    <div className="px-8">
+      <PostCard post={data.post} />
+      <CommentForm postId={data.post.id} />
+      <h1 className="text-2xl font-bold my-8">Comments</h1>
+      {data.comments.map((comment: Comment) => (
+        <CommentCard key={comment.id} comment={comment} />
+      ))}
     </div>
   );
 }
