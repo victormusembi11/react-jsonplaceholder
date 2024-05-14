@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import { Layout } from "./layout";
 import Home, { homeLoader } from "@/pages/Home";
-import Post from "@/pages/Post";
+import Post, { postLoader } from "@/pages/Post";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/post/:id",
         element: <Post />,
+        loader: postLoader,
       },
     ],
   },
