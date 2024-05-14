@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 import { Post, User } from "@/types";
 import { PostCard } from "@/components/PostCard";
+import { PostForm } from "@/components/CreatePost";
 import { fetchPosts, fetchUsers } from "@/api";
 
 interface PostWithUser extends Post {
@@ -33,7 +34,8 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-2xl my-8">Home</h1>
+      <h1 className="text-2xl my-4 font-bold">Home</h1>
+      <PostForm />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((post: PostWithUser) => (
           <PostCard key={post.id} post={post} />
